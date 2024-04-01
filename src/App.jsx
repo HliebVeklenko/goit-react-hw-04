@@ -45,11 +45,8 @@ const App = () => {
   }, [searchTerm, page, accessKey]);
 
   const handleSearch = (value) => {
-    if (value === searchTerm) {
-      return;
-    }
-    if (!value.trim()) {
-      toast.error("Please enter a search query!");
+    if (!value.trim() || value === searchTerm) {
+      toast.error("Please enter a new search query!");
       return;
     }
 
